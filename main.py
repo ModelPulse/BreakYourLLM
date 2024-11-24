@@ -14,7 +14,7 @@ def main():
     load_dotenv(dotenv_path=args.config)
 
     from sources.generate_tests import generate_tests_from_csv
-    generate_tests_from_csv(args.data)
+    generate_tests_from_csv("unit_test", args.data)
 
 
 
