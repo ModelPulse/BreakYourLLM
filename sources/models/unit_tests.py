@@ -1,30 +1,30 @@
-from sources.models.test_interface import BaseTest
+from sources.models.common_interface import BaseTest
 import pandas as pd
 from collections.abc import Iterable
 from typing import List
 from sources.helpers.openai_client import openai_client
-
+from sources.helpers.paraphrase_helper import paraphrase_question
 
 class AtomicUnitTest(BaseTest):
     
-    def __init__(self, question: str, test_case: str):
+    def __init__(self, test_case: str):
         
-        self.question = question
         self.test_case = test_case
 
-    def test(self, llm_executor):
+    def test(self, question, llm_executor):
+        # TODO: This design is subject to change. But the initial thought is to execute the question with LLM here and get the result.
         pass
 
 
-class UnitTest(Iterable):
+class UnitTest(BaseTest):
 
     def __init__(self, question: str, guideline: str):
         super().__init__()
         self.question = question
         self.guideline = guideline
-        self.test_cases = []
+        self.test_cases: List[AtomicUnitTest] = []
 
-    def generate_unit_tests():
+    def generate_unit_tests(self):
         # ChatGPT-style prompt using messages for ChatCompletion
         messages = [
             {
@@ -61,7 +61,7 @@ class UnitTest(Iterable):
         test_cases = eval(response.choices[0].message.content.strip())
 
         for test_case in test_cases:
-            unit_test = AtomicUnitTest(question, test_case)
+            unit_test = AtomicUnitTest(test_case['test'])
             self.test_cases.append(unit_test)
 
         return test_cases
@@ -69,14 +69,20 @@ class UnitTest(Iterable):
     def __iter__(self):
         return iter(self.test_cases)
 
+    def paraphrase(self):
+        n = os.env["PARAPHRASE_COUNT"]
+        questions = paraphrase_question(self.question, n)
+        self.paraphrased_questions = questions
+        # TODO: Will make more sense if we utilize the UnitTestResult function to store or make storing of this more structured.
 
-class UnitTests(Iterable):
-    def __init__(self, file):
+
+class UnitTests(BaseTest):
+    def __init__(self, file=None):
         super().__init__()
         self.file = file
         self.unit_tests: List[UnitTest] = []
 
-    def read_file():
+    def read_file(self):
         df = pd.read_csv(self.file)
         df = df.fillna("")
         
@@ -87,10 +93,13 @@ class UnitTests(Iterable):
             answer = row['answer']
             guideline = row['guideline']
 
-            unit_test = UnitTest(openai_client, question, answer)
+            unit_test = UnitTest(question, guideline)
             self.unit_tests.append(unit_test)
 
     def generate_tests(self):
+        if len(self.unit_tests)==0:
+            self.read_file()
+        
         for unit_test in self:
             unit_test.generate_unit_tests()
     

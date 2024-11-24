@@ -13,9 +13,9 @@ def main():
     # Load the .env file
     load_dotenv(dotenv_path=args.config)
 
-    from sources.generate_tests import generate_tests_from_csv
-    generate_tests_from_csv("unit_test", args.data)
-
+    from sources.generate_tests import generate_tests
+    generate_tests("unit_test", args.data)
+    generate_paraphrased_tests
 
 
 if __name__ == "__main__":
