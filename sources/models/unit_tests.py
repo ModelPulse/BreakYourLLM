@@ -5,6 +5,9 @@ from typing import List
 from sources.helpers.openai_client import openai_client
 from sources.helpers.paraphrase_helper import paraphrase_question
 
+
+MODEL = "gpt-4o"
+
 class AtomicUnitTest(BaseTest):
     
     def __init__(self, test_case: str):
@@ -13,6 +16,7 @@ class AtomicUnitTest(BaseTest):
 
     def test(self, question, llm_executor):
         # TODO: This design is subject to change. But the initial thought is to execute the question with LLM here and get the result.
+        answer = llm_executor(question)
         pass
 
 
@@ -47,20 +51,23 @@ class UnitTest(BaseTest):
                     ...
                 ]
                 Ensure each test case assertion is unique, independent of other test cases and evaluates whether the guideline is followed. Do not generate every possible test case, but have a assertion for each atomic rule in the guideline that must be true for a response that follows the guideline.
+                Output in JSON format.
                 """
             }
         ]
 
         # Call the OpenAI API with ChatCompletion
-        response = openai_client.chat.completions.create(model="gpt-3.5-turbo", 
+        response = openai_client.chat.completions.create(model=MODEL, 
             messages=messages,
-            temperature=0.3
+            temperature=0.3,
+            response_format ={ "type": "json_object" }
         )
 
         # Parse the response as a Python list of dictionaries
+        # print(response.choices[0].message.content.strip())
         test_cases = eval(response.choices[0].message.content.strip())
 
-        for test_case in test_cases:
+        for test_case in test_cases['test_cases']:
             unit_test = AtomicUnitTest(test_case['test'])
             self.test_cases.append(unit_test)
 
@@ -72,9 +79,17 @@ class UnitTest(BaseTest):
     def paraphrase(self):
         n = os.env["PARAPHRASE_COUNT"]
         questions = paraphrase_question(self.question, n)
-        self.paraphrased_questions = questions
+        self.paraphrased_questions: List[ParaResults] = []
+        for question in questions:
+            self.paraphrased_questions.append(ParaResults(question, self.guideline))
+        
+        questions
         # TODO: Will make more sense if we utilize the UnitTestResult function to store or make storing of this more structured.
 
+
+    def test(self, llm_executor):
+        for unit_test in self:
+            unit_test.tests(llm_executor)
 
 class UnitTests(BaseTest):
     def __init__(self, file=None):
@@ -105,3 +120,7 @@ class UnitTests(BaseTest):
     
     def __iter__(self):
         return iter(self.unit_tests)
+
+    def tests(self, llm_executor):
+        for unit_test in self:
+            unit_test.tests(llm_executor)

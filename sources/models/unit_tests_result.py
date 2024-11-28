@@ -4,3 +4,6 @@ class UnitTestResult(BaseTest):
         self.question = question
         # will store, a list of indivudual test case, pass/fail boolean and failure reason here.
         # might need nested objects and lists here
+
+
+    # Different metrics for computation like accuracy, etc should go in here.

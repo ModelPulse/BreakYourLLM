@@ -15,7 +15,7 @@ def main():
 
     from sources.generate_tests import generate_tests
     generate_tests("unit_test", args.data)
-    generate_paraphrased_tests
+    # generate_paraphrased_tests
 
 
 if __name__ == "__main__":
