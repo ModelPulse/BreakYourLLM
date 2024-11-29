@@ -12,7 +12,7 @@ MODEL = os.getenv("MODEL")
 class AtomicUnitTest(BaseTest):
     
     def __init__(self, test_case: str):
-        
+        super().__init__()
         self.test_case = test_case
 
     # def test(self, question, llm_executor):
@@ -89,6 +89,10 @@ class UnitTest(BaseTest):
         for unit_test in self:
             unit_test.tests(llm_executor)
 
+    def evaluate_responses(self):
+        for unit_test in self:
+            unit_test.evaluate_responses(test_cases)
+
 
 class UnitTests(BaseTest):
     def __init__(self, file=None):
@@ -127,3 +131,10 @@ class UnitTests(BaseTest):
     def paraphrase(self):
         for unit_test in self:
             unit_test.paraphrase()
+
+    def evaluate_responses(self):
+        pass
+
+    def get_evaluation_result(self):
+        for unit_test in self:
+            unit_test.evaluate_responses(test_cases)
