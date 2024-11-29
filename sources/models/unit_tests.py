@@ -4,9 +4,10 @@ from collections.abc import Iterable
 from typing import List
 from sources.helpers.openai_client import openai_client
 from sources.helpers.paraphrase_helper import paraphrase_question
+from sources.models.unit_tests_result import ParaphrasedQuestion
 
-
-MODEL = "gpt-4o"
+import os
+MODEL = os.getenv("MODEL")
 
 class AtomicUnitTest(BaseTest):
     
@@ -14,11 +15,11 @@ class AtomicUnitTest(BaseTest):
         
         self.test_case = test_case
 
-    def test(self, question, llm_executor):
-        # TODO: This design is subject to change. But the initial thought is to execute the question with LLM here and get the result.
-        answer = llm_executor(question)
-        pass
-
+    # def test(self, question, llm_executor):
+    #     # TODO: This design is subject to change. But the initial thought is to execute the question with LLM here and get the result.
+    #     # TODO: This is not the best place to put this function. Find what is.
+    #     answer = llm_executor(question)
+    #     pass
 
 class UnitTest(BaseTest):
 
@@ -27,6 +28,7 @@ class UnitTest(BaseTest):
         self.question = question
         self.guideline = guideline
         self.test_cases: List[AtomicUnitTest] = []
+        self.paraphrased_question: List[ParaphrasedQuestion] = []
 
     def generate_unit_tests(self):
         # ChatGPT-style prompt using messages for ChatCompletion
@@ -77,19 +79,16 @@ class UnitTest(BaseTest):
         return iter(self.test_cases)
 
     def paraphrase(self):
-        n = os.env["PARAPHRASE_COUNT"]
+        n = os.getenv("PARAPHRASE_COUNT")
         questions = paraphrase_question(self.question, n)
         self.paraphrased_questions: List[ParaResults] = []
         for question in questions:
-            self.paraphrased_questions.append(ParaResults(question, self.guideline))
-        
-        questions
-        # TODO: Will make more sense if we utilize the UnitTestResult function to store or make storing of this more structured.
-
+            self.paraphrased_questions.append(ParaphrasedQuestion(question))
 
     def test(self, llm_executor):
         for unit_test in self:
             unit_test.tests(llm_executor)
+
 
 class UnitTests(BaseTest):
     def __init__(self, file=None):
@@ -124,3 +123,7 @@ class UnitTests(BaseTest):
     def tests(self, llm_executor):
         for unit_test in self:
             unit_test.tests(llm_executor)
+
+    def paraphrase(self):
+        for unit_test in self:
+            unit_test.paraphrase()

@@ -6,7 +6,10 @@ def generate_tests(test_type, file):
         tests = UnitTests(file)
 
     tests.generate_tests()
+    tests.paraphrase()
+    
     tests_json = tests.to_dict()
+
     with open("tests.json", 'w') as json_file:
         json.dump(tests_json, json_file, indent=4)
 

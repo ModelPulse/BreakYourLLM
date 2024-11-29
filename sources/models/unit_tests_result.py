@@ -1,9 +1,28 @@
-class UnitTestResult(BaseTest):
-    """A test result that can be used to report the result of a unit test."""
-    def __init__(self, question):
+from typing import List
+from sources.models.common_interface import BaseTest
+
+class AtomicTestCaseExecutionResult(BaseTest):
+
+    def __init__(self):
+        self.passed: bool = False
+        self.reason: str = ""
+
+class ExecutionResult(BaseTest):
+
+    def __init__(self, answer: str):
+
+        self.answer: str = answer
+        self.test_cases: List[AtomicTestCaseExecutionResult] = []
+
+
+class ParaphrasedQuestion(BaseTest):
+    
+    def __init__(self, question: str):
+        
         self.question = question
-        # will store, a list of indivudual test case, pass/fail boolean and failure reason here.
-        # might need nested objects and lists here
+
+        # List for result for each individual run for a paraphrased question
+        self.execution_result: List[AtomicExecutionResult] = []
 
 
-    # Different metrics for computation like accuracy, etc should go in here.
+# Different metrics for computation like accuracy, etc should go in here.

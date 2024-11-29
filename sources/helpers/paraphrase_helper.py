@@ -1,5 +1,6 @@
 import json
 from sources.helpers.openai_client import openai_client
+import os
 
 def paraphrase_question(original_question: str, n) -> dict:
     # Modified prompt to ask for a structured dictionary response
@@ -15,13 +16,14 @@ def paraphrase_question(original_question: str, n) -> dict:
         ]
     }}
     
-    Original question: "{original_question}"
+    Original question: "{original_question}". The response should be in JSON.
     """
 
     try:
         response = openai_client.chat.completions.create(
-            model="gpt-3.5-turbo",  # You can use another model if preferred
+            model=os.getenv("MODEL"),  # You can use another model if preferred
             messages=[{"role": "user", "content": prompt}],
+            response_format ={ "type": "json_object" },
             temperature=0.7
         )
 
@@ -33,7 +35,7 @@ def paraphrase_question(original_question: str, n) -> dict:
             paraphrased_questions = result_dict.get("paraphrased_questions", [])
             return paraphrased_questions
         except json.JSONDecodeError:
-            raise HTTPException(status_code=500, detail=f"Failed to parse OpenAI response {result_text} into dictionary format.")
+            raise Exception(f"Failed to parse OpenAI response {result_text} into dictionary format.")
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error generating paraphrases: {e}")
+        raise Exception(f"Error generating paraphrases: {e}")
