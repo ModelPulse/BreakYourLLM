@@ -1,6 +1,7 @@
 from typing import List
 from sources.models.common_interface import BaseTest
 from sources.helpers.testcase_evaluator import evaluate_answer_for_test
+import os
 
 class AtomicTestCaseExecutionResult(BaseTest):
 
@@ -34,8 +35,14 @@ class ParaphrasedQuestion(BaseTest):
         # List for result for each individual run for a paraphrased question
         self.execution_result: List[AtomicExecutionResult] = []
 
+    def execute(self, llm_executor):
+        n = os.getenv("QUESTION_REPETITION_COUNT")
+        for _ in range(n):
+            answer = llm_executor.call_llm_api(self.question)
+            self.execution_result.append(AtomicExecutionResult(answer))
+
     def evaluate_responses(self, tests):
         for execution_result in self.execution_result:
             execution_result.evaluate_responses(tests)
 
-# Different metrics for computation like accuracy, etc should go in here.
+# TODO: Different metrics for computation like accuracy, etc should go in here.

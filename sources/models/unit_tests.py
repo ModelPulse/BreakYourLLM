@@ -85,13 +85,13 @@ class UnitTest(BaseTest):
         for question in questions:
             self.paraphrased_questions.append(ParaphrasedQuestion(question))
 
-    def test(self, llm_executor):
-        for unit_test in self:
-            unit_test.tests(llm_executor)
-
     def evaluate_responses(self):
+        for unit_test in self.paraphrased_question:
+            unit_test.evaluate_responses(self.test_cases)
+
+    def execute(self, llm_executor):
         for unit_test in self:
-            unit_test.evaluate_responses(test_cases)
+            unit_test.execute(llm_executor)
 
 
 class UnitTests(BaseTest):
@@ -132,9 +132,10 @@ class UnitTests(BaseTest):
         for unit_test in self:
             unit_test.paraphrase()
 
-    def evaluate_responses(self):
-        pass
-
-    def get_evaluation_result(self):
+    def execute(self, llm_executor):
         for unit_test in self:
-            unit_test.evaluate_responses(test_cases)
+            unit_test.execute(llm_executor)
+
+    def evaluate_responses(self):
+        for unit_test in self:
+            unit_test.evaluate_responses()
