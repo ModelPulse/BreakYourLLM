@@ -1,6 +1,9 @@
 import json
 
 class BaseTest:
+    """This class helps in transforming its sub-classes to json easily. 
+    It also helps in creating the object back from those stored jsons."""
+
     def to_dict(self):
         """Automatically convert attributes to a dictionary."""
         result = {}

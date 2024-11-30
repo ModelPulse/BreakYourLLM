@@ -2,6 +2,7 @@ from typing import List
 from sources.models.common_interface import BaseTest
 from sources.helpers.testcase_evaluator import evaluate_answer_for_test
 import os
+import numpy as np
 
 class AtomicTestCaseExecutionResult(BaseTest):
 
@@ -25,6 +26,12 @@ class ExecutionResult(BaseTest):
             passed, reason = evaluate_answer_for_test(answer, test.test_case)
             self.test_cases.append(AtomicTestCaseExecutionResult(test, passed, reason))
 
+    def get_evaluation_result_as_numpy(self):
+        results = []
+        for test in self.test_cases:
+            results.append(test.passed)
+        return np.array(results)
+
 
 class ParaphrasedQuestion(BaseTest):
     
@@ -44,5 +51,11 @@ class ParaphrasedQuestion(BaseTest):
     def evaluate_responses(self, tests):
         for execution_result in self.execution_result:
             execution_result.evaluate_responses(tests)
+
+    def get_evaluation_result_as_numpy(self):
+        results = []
+        for execution_result in self.execution_result:
+            results.append(execution_result.get_evaluation_result_as_numpy())
+        return np.array(results)
 
 # TODO: Different metrics for computation like accuracy, etc should go in here.

@@ -5,6 +5,7 @@ from typing import List
 from sources.helpers.openai_client import openai_client
 from sources.helpers.paraphrase_helper import paraphrase_question
 from sources.models.unit_tests_result import ParaphrasedQuestion
+import numpy as np
 
 import os
 MODEL = os.getenv("MODEL")
@@ -20,6 +21,9 @@ class AtomicUnitTest(BaseTest):
     #     # TODO: This is not the best place to put this function. Find what is.
     #     answer = llm_executor(question)
     #     pass
+
+    # TODO: User should be able to specify the priority of a test. Lower priority number is higher.
+    # By default we will generate a Priority 2. But user can edit it in the JSON file.
 
 class UnitTest(BaseTest):
 
@@ -93,6 +97,12 @@ class UnitTest(BaseTest):
         for unit_test in self:
             unit_test.execute(llm_executor)
 
+    def get_evaluation_result_as_numpy(self):
+        results = []
+        for para_q in self.paraphrased_question:
+            results.append(para_q.get_evaluation_result_as_numpy())
+        return np.array(results)
+
 
 class UnitTests(BaseTest):
     def __init__(self, file=None):
@@ -139,3 +149,9 @@ class UnitTests(BaseTest):
     def evaluate_responses(self):
         for unit_test in self:
             unit_test.evaluate_responses()
+
+    def get_evaluation_result_as_numpy(self):
+        results = []
+        for unit_test in self:
+            results.append(unit_test.get_evaluation_result_as_numpy())
+        return np.array(results)
