@@ -8,7 +8,7 @@ class AtomicTestCaseExecutionResult(BaseTest):
 
     def __init__(self, test_case, passed, reason):
         super().__init__()
-        self.test_case: str = ""
+        self.test_case: str = test_case
         self.passed: bool = passed
         self.reason: str = reason
 
