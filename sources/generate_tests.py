@@ -41,7 +41,7 @@ def run_pipeline(file):
 
     #-----------------------------------------------------
 
-    #tests.evaluate_responses()
+    tests.evaluate_responses()
     print("Stage 4/5 completed - Paraphrases generated and will be stored in results/stage4_response_evaluation.json")
 
     response_evaluation_result_json = tests.to_dict()
@@ -51,7 +51,7 @@ def run_pipeline(file):
 
     #-----------------------------------------------------
 
-    #tests.evaluate_responses()
+    tests.evaluate_responses()
     print("Stage 5/5 completed - Metric evaluation completed and will be stored in results/stage5_metric_evaluation.json")
 
     # TODO: It will make sense to have a simple JSON or dict for this rather than a massive json object.

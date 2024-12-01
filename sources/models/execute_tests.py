@@ -15,7 +15,7 @@ class LLMExecutor:
     def load_config(self, config_file):
         with open(config_file, 'r') as file:
             self.config = yaml.safe_load(file)
-        self.default_api = self.config.get('default_api')
+        self.default_api = self.config.get('api_to_test')
         self.apis = self.config.get('apis', {})
 
     def call_llm_api(self, question, api_name=None, **kwargs):
@@ -133,12 +133,12 @@ class LLMExecutor:
                 raise ValueError(f"Invalid token in response path: '{token}'")
         return keys
 
-# if __name__ == '__main__':
-#     # Example usage
-#     executor = LLMExecutor()
+if __name__ == '__main__':
+    # Example usage
+    executor = LLMExecutor()
 
-#     question = "Who is Ash? Does he have cash?"
+    question = "Who is Ash? Does he have cash?"
 
-#     # Call your local API
-#     answer_local = executor.call_llm_api(question, api_name='local_api')
-#     print("Answer from Local API:", answer_local)
+    # Call your local API
+    answer_local = executor.call_llm_api(question, api_name='local_api')
+    print("Answer from Local API:", answer_local)

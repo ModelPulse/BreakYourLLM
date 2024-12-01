@@ -23,7 +23,7 @@ class ExecutionResult(BaseTest):
     def evaluate_responses(self, tests):
         for test in tests:
             # evaluate whether the answer follows the given test
-            passed, reason = evaluate_answer_for_test(answer, test.test_case)
+            passed, reason = evaluate_answer_for_test(self.answer, test.test_case)
             self.test_cases.append(AtomicTestCaseExecutionResult(test, passed, reason))
 
     def get_evaluation_result_as_numpy(self):
@@ -40,13 +40,13 @@ class ParaphrasedQuestion(BaseTest):
         self.question = question
 
         # List for result for each individual run for a paraphrased question
-        self.execution_result: List[AtomicExecutionResult] = []
+        self.execution_result: List[ExecutionResult] = []
 
     def execute(self, llm_executor):
-        n = os.getenv("QUESTION_REPETITION_COUNT")
+        n = int(os.getenv("QUESTION_REPETITION_COUNT"))
         for _ in range(n):
             answer = llm_executor.call_llm_api(self.question)
-            self.execution_result.append(AtomicExecutionResult(answer))
+            self.execution_result.append(ExecutionResult(answer))
 
     def evaluate_responses(self, tests):
         for execution_result in self.execution_result:

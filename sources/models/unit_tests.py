@@ -85,16 +85,16 @@ class UnitTest(BaseTest):
     def paraphrase(self):
         n = os.getenv("PARAPHRASE_COUNT")
         questions = paraphrase_question(self.question, n)
-        self.paraphrased_questions: List[ParaResults] = []
+        self.paraphrased_question: List[ParaResults] = []
         for question in questions:
-            self.paraphrased_questions.append(ParaphrasedQuestion(question))
+            self.paraphrased_question.append(ParaphrasedQuestion(question))
 
     def evaluate_responses(self):
         for unit_test in self.paraphrased_question:
             unit_test.evaluate_responses(self.test_cases)
 
     def execute(self, llm_executor):
-        for unit_test in self:
+        for unit_test in self.paraphrased_question:
             unit_test.execute(llm_executor)
 
     def get_evaluation_result_as_numpy(self):

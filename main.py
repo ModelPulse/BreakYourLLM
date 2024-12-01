@@ -24,7 +24,6 @@ def main():
 
     
     run_pipeline(args.file)
-    generate_paraphrased_tests
 
 
 if __name__ == "__main__":

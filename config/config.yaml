@@ -1,4 +1,4 @@
-default_api: openai
+api_to_test: local_api 
 
 apis:
   openai:
@@ -46,7 +46,7 @@ apis:
 
   local_api:
     name: LocalAPI
-    endpoint: http://127.0.0.1:8020/answer
+    endpoint: http://127.0.0.1:8025/answer
     auth_required: false  # Authentication not required
     headers:
       accept: application/json
