@@ -8,7 +8,7 @@ import logging
 import re
 
 class LLMExecutor:
-    def __init__(self, config_file='config.yaml'):
+    def __init__(self, config_file='config/config.yaml'):
         self.load_config(config_file)
         logging.basicConfig(level=logging.INFO)
 
@@ -29,21 +29,30 @@ class LLMExecutor:
         endpoint = api_config['endpoint']
         headers = api_config.get('headers', {}).copy()
 
-        # Retrieve API key
-        api_key = api_config.get('api_key')
-        api_key_env_var = api_config.get('api_key_env_var')
-        if api_key_env_var:
-            api_key_env = os.getenv(api_key_env_var)
-            if not api_key_env:
-                raise EnvironmentError(f"Environment variable '{api_key_env_var}' is not set.")
-            api_key = api_key_env
-        if not api_key:
-            raise ValueError(f"API key for '{api_name}' is not provided.")
+        # Check if authentication is required
+        auth_required = api_config.get('auth_required', True)
 
-        # Replace placeholders in headers
-        for key, value in headers.items():
-            if isinstance(value, str):
-                headers[key] = value.format(api_key=api_key)
+        if auth_required:
+            # Retrieve API key
+            api_key = api_config.get('api_key')
+            api_key_env_var = api_config.get('api_key_env_var')
+            if api_key_env_var:
+                api_key_env = os.getenv(api_key_env_var)
+                if not api_key_env:
+                    raise EnvironmentError(f"Environment variable '{api_key_env_var}' is not set.")
+                api_key = api_key_env
+            if not api_key:
+                raise ValueError(f"API key for '{api_name}' is not provided.")
+
+            # Replace placeholders in headers
+            for key, value in headers.items():
+                if isinstance(value, str):
+                    headers[key] = value.format(api_key=api_key)
+        else:
+            # If authentication is not required, ensure no placeholders remain in headers
+            for key, value in headers.items():
+                if isinstance(value, str):
+                    headers[key] = value.format()
 
         # Prepare request body
         request_body_template = api_config.get('request_body')
@@ -123,3 +132,13 @@ class LLMExecutor:
             else:
                 raise ValueError(f"Invalid token in response path: '{token}'")
         return keys
+
+# if __name__ == '__main__':
+#     # Example usage
+#     executor = LLMExecutor()
+
+#     question = "Who is Ash? Does he have cash?"
+
+#     # Call your local API
+#     answer_local = executor.call_llm_api(question, api_name='local_api')
+#     print("Answer from Local API:", answer_local)

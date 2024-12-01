@@ -14,7 +14,16 @@ def main():
     load_dotenv(dotenv_path=args.config)
 
     from sources.generate_tests import run_pipeline
-    run_pipeline(args.file)
+    from sources.models.execute_tests import LLMExecutor
+
+    executor = LLMExecutor()
+    question = "Who is Ash? Does he have cash?"
+    # Call your local API
+    answer_local = executor.call_llm_api(question, api_name='local_api')
+    print("Answer from Local API:", answer_local)
+
+    
+    # run_pipeline(args.file)
     # generate_paraphrased_tests
 
 

@@ -4,6 +4,7 @@ apis:
   openai:
     name: OpenAI
     endpoint: https://api.openai.com/v1/chat/completions
+    auth_required: true
     api_key_env_var: OPENAI_API_KEY
     headers:
       Content-Type: application/json
@@ -19,6 +20,7 @@ apis:
   anthropic:
     name: Anthropic
     endpoint: https://api.anthropic.com/v1/complete
+    auth_required: true
     api_key_env_var: ANTHROPIC_API_KEY
     headers:
       Content-Type: application/json
@@ -33,10 +35,22 @@ apis:
   custom_llm:
     name: CustomLLM
     endpoint: https://your-custom-llm.com/api/generate
+    auth_required: true
     api_key_env_var: CUSTOM_LLM_API_KEY
     headers:
       Content-Type: application/json
       Authorization: "Bearer {api_key}"
+    request_body:
+      question: "{question}"
+    response_path: answer
+
+  local_api:
+    name: LocalAPI
+    endpoint: http://127.0.0.1:8020/answer
+    auth_required: false  # Authentication not required
+    headers:
+      accept: application/json
+      Content-Type: application/json
     request_body:
       question: "{question}"
     response_path: answer
