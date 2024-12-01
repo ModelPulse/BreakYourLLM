@@ -13,7 +13,7 @@ def main():
     # Load the .env file
     load_dotenv(dotenv_path=args.config)
 
-    from sources.generate_tests import run_pipeline
+    from sources.full_pipeline import run_pipeline
     from sources.models.execute_tests import LLMExecutor
 
     # executor = LLMExecutor()

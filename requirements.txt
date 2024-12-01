@@ -2,6 +2,7 @@ annotated-types==0.7.0
 anyio==4.6.2.post1
 certifi==2024.8.30
 charset-normalizer==3.4.0
+DateTime==5.5
 distro==1.9.0
 exceptiongroup==1.2.2
 h11==0.14.0
@@ -25,3 +26,4 @@ tqdm==4.67.1
 typing_extensions==4.12.2
 tzdata==2024.2
 urllib3==2.2.3
+zope.interface==7.2

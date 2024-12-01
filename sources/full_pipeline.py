@@ -1,5 +1,6 @@
 import json
 from sources.models.execute_tests import LLMExecutor
+import time
 
 def run_pipeline(file):
     from sources.models.unit_tests import UnitTests
@@ -8,6 +9,7 @@ def run_pipeline(file):
     import os
     # TODO: Use a central environment variable for results directory and use that variable everywhere instead of hardcoding.
     os.makedirs("results", exist_ok=True)
+    start_time = time.time()
 
     #-----------------------------------------------------
 
@@ -31,7 +33,7 @@ def run_pipeline(file):
 
     #-----------------------------------------------------
 
-    tests.execute(LLMExecutor())
+    # tests.execute(LLMExecutor())
     print("Stage 3/5 completed - LLM queries executed and will be stored in results/stage3_execution_result.json")
 
     execution_result_json = tests.to_dict()
@@ -41,7 +43,7 @@ def run_pipeline(file):
 
     #-----------------------------------------------------
 
-    tests.evaluate_responses()
+    # tests.evaluate_responses()
     print("Stage 4/5 completed - Paraphrases generated and will be stored in results/stage4_response_evaluation.json")
 
     response_evaluation_result_json = tests.to_dict()
@@ -49,16 +51,44 @@ def run_pipeline(file):
     with open("results/stage4_response_evaluation.json", 'w') as json_file:
         json.dump(response_evaluation_result_json, json_file, indent=4)
 
-    #-----------------------------------------------------
+    #----------------------------------------------------- Stage 5
 
-    tests.evaluate_responses()
+    # tests.evaluate_responses()
     print("Stage 5/5 completed - Metric evaluation completed and will be stored in results/stage5_metric_evaluation.json")
+
+    #----------------------------------------------------- Metadata creation
+
+    end_time = time.time()
+    execution_time = end_time - start_time
+    execution_time = time.strftime('%H:%M:%S', time.gmtime(execution_time))
+
+    from datetime import date, datetime
+    # Get today's date
+    today = date.today()
+
+    now = datetime.now()
+    # Extract and format the time
+    current_time = now.strftime("%H:%M:%S")  # Format: HH:MM:SS
+
+
+    from sources.models.metadata import MetaData
+    metadata = MetaData(
+        None, "medLLM", "This dataset contains the test cases for evaluating the responses of a medical chatbot regarding the dosing of Eliquis for DVT/PE",
+        str(today), "John Doe", str(current_time), str(execution_time)
+    )
+
+    tests.metadata = metadata
+
+    #----------------------------------------------------- Stage 5 JSON saving
+
+    print("Stage 5 - Saving with Metadata")
 
     # TODO: It will make sense to have a simple JSON or dict for this rather than a massive json object.
     metric_evaluation_result = tests.to_dict()
 
     with open("results/stage5_metric_evaluation.json", 'w') as json_file:
         json.dump(metric_evaluation_result, json_file, indent=4)
+
 
     return tests
 

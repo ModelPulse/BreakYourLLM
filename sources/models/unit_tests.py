@@ -5,6 +5,7 @@ from typing import List
 from sources.helpers.openai_client import openai_client
 from sources.helpers.paraphrase_helper import paraphrase_question
 from sources.models.unit_tests_result import ParaphrasedQuestion
+from sources.models.metadata import MetaData
 import numpy as np
 
 import os
@@ -109,6 +110,7 @@ class UnitTests(BaseTest):
         super().__init__()
         self.file = file
         self.unit_tests: List[UnitTest] = []
+        self.metadata: MetaData = None
 
     def read_file(self):
         df = pd.read_csv(self.file)
