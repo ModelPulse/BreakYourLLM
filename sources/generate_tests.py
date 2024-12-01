@@ -1,4 +1,5 @@
 import json
+from sources.models.execute_tests import LLMExecutor
 
 def run_pipeline(file):
     from sources.models.unit_tests import UnitTests
@@ -30,7 +31,7 @@ def run_pipeline(file):
 
     #-----------------------------------------------------
 
-    #tests.execute(llm_executor)
+    tests.execute(LLMExecutor())
     print("Stage 3/5 completed - LLM queries executed and will be stored in results/stage3_execution_result.json")
 
     execution_result_json = tests.to_dict()
