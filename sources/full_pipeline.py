@@ -63,7 +63,6 @@ def run_pipeline(file):
     #----------------------------------------------------- Stage 5
 
     result_array = tests.get_evaluation_result_as_numpy()
-    print(result_array)
     from sources.metrics.accuracy import Accuracy
     metric = Accuracy()
     metric.get_metric_value(result_array)

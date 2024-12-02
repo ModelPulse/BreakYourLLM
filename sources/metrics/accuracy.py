@@ -13,6 +13,8 @@ class Accuracy(BaseMetric):
         
 
         self.metric_result = None
+        self.metric_result_question_wise = []
+        self.metric_result_question_test_wise = []
         self.threshold = None
 
 
@@ -25,4 +27,6 @@ class Accuracy(BaseMetric):
     def get_metric_value(self, result_array):
 
         self.metric_result = result_array.mean()
+        self.metric_result_question_wise = result_array.mean(axis=(1, 2, 3)).tolist()
+        self.metric_result_question_test_wise = result_array.mean(axis=(1, 2)).tolist()
         return self.metric_result
