@@ -24,7 +24,7 @@ class ExecutionResult(BaseTest):
         for test in tests:
             # evaluate whether the answer follows the given test
             passed, reason = evaluate_answer_for_test(self.answer, test.test_case)
-            self.test_cases.append(AtomicTestCaseExecutionResult(test, passed, reason))
+            self.test_cases.append(AtomicTestCaseExecutionResult(test.test_case, passed, reason))
 
     def get_evaluation_result_as_numpy(self):
         results = []

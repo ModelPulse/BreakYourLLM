@@ -22,6 +22,7 @@ class Accuracy(BaseMetric):
         raise Exception("Method not implemented")
 
 
-    def to_json(self):
+    def get_metric_value(self, result_array):
 
-        pass
+        self.metric_result = result_array.mean()
+        return self.metric_result

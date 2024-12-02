@@ -6,6 +6,7 @@ from sources.helpers.openai_client import openai_client
 from sources.helpers.paraphrase_helper import paraphrase_question
 from sources.models.unit_tests_result import ParaphrasedQuestion
 from sources.models.metadata import MetaData
+from sources.metrics.base_metric import BaseMetric
 import numpy as np
 
 import os
@@ -111,6 +112,7 @@ class UnitTests(BaseTest):
         self.file = file
         self.unit_tests: List[UnitTest] = []
         self.metadata: MetaData = None
+        self.metrics: List[BaseMetric] = []
 
     def read_file(self):
         df = pd.read_csv(self.file)

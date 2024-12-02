@@ -1,4 +1,6 @@
-class BaseMetric:
+from sources.models.common_interface import BaseTest
+
+class BaseMetric(BaseTest):
 
     def __init__(self, metric_name="", threshold=None):
 
@@ -20,9 +22,9 @@ class BaseMetric:
         raise Exception("Method not implemented")
 
 
-    def to_json(self):
+    # def to_json(self):
 
-        pass
+    #     pass
 
 """
 Dimensions guide to accessing numpy results array:

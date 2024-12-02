@@ -46,7 +46,7 @@ apis:
 
   local_api:
     name: LocalAPI
-    endpoint: http://127.0.0.1:8025/answer
+    endpoint: http://127.0.0.1:8000/answer
     auth_required: false  # Authentication not required
     headers:
       accept: application/json
