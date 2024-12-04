@@ -64,9 +64,14 @@ def run_pipeline(file):
 
     result_array = tests.get_evaluation_result_as_numpy()
     from sources.metrics.accuracy import Accuracy
-    metric = Accuracy()
-    metric.get_metric_value(result_array)
-    tests.metrics.append(metric)
+    from sources.metrics.general_stats import GeneralStats
+    from sources.metrics.hallucination_rate import HallucinationRate
+    from sources.metrics.llm_drift_rate import LLMDriftRate
+
+    metrics = [Accuracy(), GeneralStats(), HallucinationRate(), LLMDriftRate()]
+    for metric in metrics:
+        metric.get_metric_value(result_array)
+        tests.metrics.append(metric)
     print("Stage 5/5 completed - Metric evaluation completed and will be stored in results/stage5_metric_evaluation.json")
 
     # #----------------------------------------------------- Metadata creation
