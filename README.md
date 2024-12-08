@@ -1,10 +1,11 @@
 # BreakYourLLM
 
 
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/release/python-380/)
-[![Waitlist Form](https://img.shields.io/badge/Form-Click_here-blue)](https://example.com/form)
-[![Website](https://img.shields.io/badge/Website-Click_here-green)](https://example.com/website)
 
+[![Waitlist](https://img.shields.io/badge/Waitlist-Click_here-blue)](https://example.com/form)
+[![Website](https://img.shields.io/badge/Website-Click_here-green)](https://example.com/website)
+[![Documentation](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://<your-docs-url>)
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/release/python-380/)
 ## Test & Simulate your Production LLMs
 
 **Break Your LLM before your users do! With our framework, you can build a comprehensive suite of tests that rigorously test your LLM against your guidelines.**
