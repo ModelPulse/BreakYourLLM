@@ -32,8 +32,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build/html
+          publish_dir: docs/source/_build/html
           publish_branch: gh-pages
-
-      - name: Debug Build Output
-        run: ls -R docs/_build/html
