@@ -34,3 +34,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/_build/html
           publish_branch: gh-pages
+
+      - name: Debug Build Output
+        run: ls -R docs/_build/html
