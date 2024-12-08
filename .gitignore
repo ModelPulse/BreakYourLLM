@@ -2,6 +2,33 @@ env
 __pycache__
 *.csv
 *.env
-!.env
+!config/.env
 .DS_Store
 *.json
+
+# Sphinx build directories
+_build/
+build/
+
+# Sphinx cache
+*.doctree
+*.pickle
+
+# Auto-generated API documentation (if using sphinx-apidoc)
+docs/source/modules.rst
+
+# Temporary or log files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Editor/IDE-specific files
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.env/
