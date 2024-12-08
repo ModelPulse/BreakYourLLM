@@ -1,0 +1,35 @@
+sources.metrics.base_metric
+===========================
+
+.. py:module:: sources.metrics.base_metric
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   sources.metrics.base_metric.BaseMetric
+
+
+Module Contents
+---------------
+
+.. py:class:: BaseMetric(metric_name='', threshold=None)
+
+   Bases: :py:obj:`sources.models.common_interface.BaseTest`
+
+
+   .. py:attribute:: metric_result
+      :value: None
+
+
+
+   .. py:attribute:: threshold
+      :value: None
+
+
+
+   .. py:method:: passed()
+
+

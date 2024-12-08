@@ -1,0 +1,38 @@
+sources.metrics.general_stats
+=============================
+
+.. py:module:: sources.metrics.general_stats
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   sources.metrics.general_stats.GeneralStats
+
+
+Module Contents
+---------------
+
+.. py:class:: GeneralStats(metric_name='', threshold=None)
+
+   Bases: :py:obj:`sources.metrics.base_metric.BaseMetric`
+
+
+   .. py:attribute:: metric_result
+      :value: None
+
+
+
+   .. py:attribute:: threshold
+      :value: None
+
+
+
+   .. py:method:: passed()
+
+
+   .. py:method:: get_metric_value(result_array)
+
+

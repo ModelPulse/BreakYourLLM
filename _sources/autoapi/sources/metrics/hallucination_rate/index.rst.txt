@@ -1,0 +1,38 @@
+sources.metrics.hallucination_rate
+==================================
+
+.. py:module:: sources.metrics.hallucination_rate
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   sources.metrics.hallucination_rate.HallucinationRate
+
+
+Module Contents
+---------------
+
+.. py:class:: HallucinationRate(metric_name='', threshold=None)
+
+   Bases: :py:obj:`sources.metrics.base_metric.BaseMetric`
+
+
+   .. py:attribute:: metric_result
+      :value: None
+
+
+
+   .. py:attribute:: threshold
+      :value: None
+
+
+
+   .. py:method:: passed()
+
+
+   .. py:method:: get_metric_value(result_array)
+
+

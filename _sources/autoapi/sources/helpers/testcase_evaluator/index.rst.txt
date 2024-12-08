@@ -1,0 +1,19 @@
+sources.helpers.testcase_evaluator
+==================================
+
+.. py:module:: sources.helpers.testcase_evaluator
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   sources.helpers.testcase_evaluator.evaluate_answer_for_test
+
+
+Module Contents
+---------------
+
+.. py:function:: evaluate_answer_for_test(answer: str, test)
+

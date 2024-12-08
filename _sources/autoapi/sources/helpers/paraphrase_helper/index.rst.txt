@@ -1,0 +1,19 @@
+sources.helpers.paraphrase_helper
+=================================
+
+.. py:module:: sources.helpers.paraphrase_helper
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   sources.helpers.paraphrase_helper.paraphrase_question
+
+
+Module Contents
+---------------
+
+.. py:function:: paraphrase_question(original_question: str, n) -> dict
+

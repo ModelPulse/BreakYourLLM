@@ -1,0 +1,130 @@
+unit_tests
+==========
+
+.. py:module:: unit_tests
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   unit_tests.MODEL
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unit_tests.AtomicUnitTest
+   unit_tests.UnitTest
+   unit_tests.UnitTests
+
+
+Module Contents
+---------------
+
+.. py:data:: MODEL
+
+.. py:class:: AtomicUnitTest(test_case: str)
+
+   Bases: :py:obj:`sources.models.common_interface.BaseTest`
+
+
+   .. py:attribute:: test_case
+
+
+.. py:class:: UnitTest(question: str, guideline: str)
+
+   Bases: :py:obj:`sources.models.common_interface.BaseTest`
+
+
+   .. py:attribute:: question
+
+
+   .. py:attribute:: guideline
+
+
+   .. py:attribute:: test_cases
+      :type:  List[AtomicUnitTest]
+      :value: []
+
+
+
+   .. py:attribute:: paraphrased_question
+      :type:  List[sources.models.unit_tests_result.ParaphrasedQuestion]
+      :value: []
+
+
+
+   .. py:method:: generate_unit_tests()
+
+
+   .. py:method:: __iter__()
+
+
+   .. py:method:: paraphrase()
+
+
+   .. py:method:: evaluate_responses()
+
+
+   .. py:method:: execute(llm_executor)
+
+
+   .. py:method:: get_evaluation_result_as_numpy()
+
+
+.. py:class:: UnitTests(file=None)
+
+   Bases: :py:obj:`sources.models.common_interface.BaseTest`
+
+
+   .. py:attribute:: file
+      :value: None
+
+
+
+   .. py:attribute:: unit_tests
+      :type:  List[UnitTest]
+      :value: []
+
+
+
+   .. py:attribute:: metadata
+      :type:  sources.models.metadata.MetaData
+      :value: None
+
+
+
+   .. py:attribute:: metrics
+      :type:  List[sources.metrics.base_metric.BaseMetric]
+      :value: []
+
+
+
+   .. py:method:: read_file()
+
+
+   .. py:method:: generate_tests()
+
+
+   .. py:method:: __iter__()
+
+
+   .. py:method:: tests(llm_executor)
+
+
+   .. py:method:: paraphrase()
+
+
+   .. py:method:: execute(llm_executor)
+
+
+   .. py:method:: evaluate_responses()
+
+
+   .. py:method:: get_evaluation_result_as_numpy()
+
+

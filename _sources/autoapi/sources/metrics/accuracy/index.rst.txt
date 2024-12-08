@@ -1,0 +1,48 @@
+sources.metrics.accuracy
+========================
+
+.. py:module:: sources.metrics.accuracy
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   sources.metrics.accuracy.Accuracy
+
+
+Module Contents
+---------------
+
+.. py:class:: Accuracy(metric_name='', threshold=None)
+
+   Bases: :py:obj:`sources.metrics.base_metric.BaseMetric`
+
+
+   .. py:attribute:: metric_result
+      :value: None
+
+
+
+   .. py:attribute:: metric_result_question_wise
+      :value: []
+
+
+
+   .. py:attribute:: metric_result_question_test_wise
+      :value: []
+
+
+
+   .. py:attribute:: threshold
+      :value: None
+
+
+
+   .. py:method:: passed()
+
+
+   .. py:method:: get_metric_value(result_array)
+
+

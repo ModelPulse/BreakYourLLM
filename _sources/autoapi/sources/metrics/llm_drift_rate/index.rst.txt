@@ -1,0 +1,38 @@
+sources.metrics.llm_drift_rate
+==============================
+
+.. py:module:: sources.metrics.llm_drift_rate
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   sources.metrics.llm_drift_rate.LLMDriftRate
+
+
+Module Contents
+---------------
+
+.. py:class:: LLMDriftRate(metric_name='', threshold=None)
+
+   Bases: :py:obj:`sources.metrics.base_metric.BaseMetric`
+
+
+   .. py:attribute:: metric_result
+      :value: None
+
+
+
+   .. py:attribute:: threshold
+      :value: None
+
+
+
+   .. py:method:: passed()
+
+
+   .. py:method:: get_metric_value(result_array)
+
+

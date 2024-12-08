@@ -1,0 +1,45 @@
+metadata
+========
+
+.. py:module:: metadata
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   metadata.MetaData
+
+
+Module Contents
+---------------
+
+.. py:class:: MetaData(uuid_val, name, description, run_date, run_by, run_time, run_duration)
+
+   Bases: :py:obj:`sources.models.common_interface.BaseTest`
+
+
+   .. py:attribute:: uuid
+      :value: ''
+
+
+
+   .. py:attribute:: name
+
+
+   .. py:attribute:: description
+
+
+   .. py:attribute:: run_date
+
+
+   .. py:attribute:: run_by
+
+
+   .. py:attribute:: run_time
+
+
+   .. py:attribute:: run_duration
+
+

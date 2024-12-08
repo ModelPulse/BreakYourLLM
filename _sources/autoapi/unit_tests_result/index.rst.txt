@@ -1,0 +1,80 @@
+unit_tests_result
+=================
+
+.. py:module:: unit_tests_result
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unit_tests_result.AtomicTestCaseExecutionResult
+   unit_tests_result.ExecutionResult
+   unit_tests_result.ParaphrasedQuestion
+
+
+Module Contents
+---------------
+
+.. py:class:: AtomicTestCaseExecutionResult(test_case, passed, reason)
+
+   Bases: :py:obj:`sources.models.common_interface.BaseTest`
+
+
+   .. py:attribute:: test_case
+      :type:  str
+
+
+   .. py:attribute:: passed
+      :type:  bool
+
+
+   .. py:attribute:: reason
+      :type:  str
+
+
+.. py:class:: ExecutionResult(answer: str)
+
+   Bases: :py:obj:`sources.models.common_interface.BaseTest`
+
+
+   .. py:attribute:: answer
+      :type:  str
+
+
+   .. py:attribute:: test_cases
+      :type:  List[AtomicTestCaseExecutionResult]
+      :value: []
+
+
+
+   .. py:method:: evaluate_responses(tests)
+
+
+   .. py:method:: get_evaluation_result_as_numpy()
+
+
+.. py:class:: ParaphrasedQuestion(question: str)
+
+   Bases: :py:obj:`sources.models.common_interface.BaseTest`
+
+
+   .. py:attribute:: question
+
+
+   .. py:attribute:: execution_result
+      :type:  List[ExecutionResult]
+      :value: []
+
+
+
+   .. py:method:: execute(llm_executor)
+
+
+   .. py:method:: evaluate_responses(tests)
+
+
+   .. py:method:: get_evaluation_result_as_numpy()
+
+

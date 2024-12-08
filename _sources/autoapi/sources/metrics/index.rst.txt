@@ -1,0 +1,19 @@
+sources.metrics
+===============
+
+.. py:module:: sources.metrics
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/sources/metrics/accuracy/index
+   /autoapi/sources/metrics/base_metric/index
+   /autoapi/sources/metrics/general_stats/index
+   /autoapi/sources/metrics/hallucination_rate/index
+   /autoapi/sources/metrics/llm_drift_rate/index
+
+

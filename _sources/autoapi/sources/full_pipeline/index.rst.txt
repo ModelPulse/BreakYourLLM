@@ -1,0 +1,19 @@
+sources.full_pipeline
+=====================
+
+.. py:module:: sources.full_pipeline
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   sources.full_pipeline.run_pipeline
+
+
+Module Contents
+---------------
+
+.. py:function:: run_pipeline(file)
+

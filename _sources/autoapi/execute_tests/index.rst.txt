@@ -1,0 +1,54 @@
+execute_tests
+=============
+
+.. py:module:: execute_tests
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   execute_tests.executor
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   execute_tests.LLMExecutor
+
+
+Module Contents
+---------------
+
+.. py:class:: LLMExecutor(config_file='config/config.yaml')
+
+   .. py:method:: load_config(config_file)
+
+
+   .. py:method:: call_llm_api(question, api_name=None, **kwargs)
+
+
+   .. py:method:: deep_format(obj, **kwargs)
+
+      Recursively formats strings in a nested structure.
+
+
+
+   .. py:method:: extract_answer(response_json, response_path)
+
+      Extracts the answer from the response JSON based on the response path.
+
+
+
+   .. py:method:: parse_response_path(path_str)
+
+      Parses the response path string into a list of keys/indexes.
+      For example: 'choices[0].message.content' => ['choices', 0, 'message', 'content']
+
+
+
+.. py:data:: executor
+

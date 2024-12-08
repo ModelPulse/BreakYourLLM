@@ -1,0 +1,16 @@
+API Reference
+=============
+
+This page contains auto-generated API reference documentation [#f1]_.
+
+.. toctree::
+   :titlesonly:
+
+   /autoapi/sources/index
+   /autoapi/metadata/index
+   /autoapi/unit_tests/index
+   /autoapi/execute_tests/index
+   /autoapi/common_interface/index
+   /autoapi/unit_tests_result/index
+
+.. [#f1] Created with `sphinx-autoapi <https://github.com/readthedocs/sphinx-autoapi>`_

@@ -1,0 +1,51 @@
+common_interface
+================
+
+.. py:module:: common_interface
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   common_interface.BaseTest
+
+
+Module Contents
+---------------
+
+.. py:class:: BaseTest
+
+   This class helps in transforming its sub-classes to json easily.
+   It also helps in creating the object back from those stored jsons.
+
+
+   .. py:method:: to_dict()
+
+      Automatically convert attributes to a dictionary.
+
+
+
+   .. py:method:: to_json()
+
+      Convert the object to a JSON string.
+
+
+
+   .. py:method:: from_dict(data)
+      :classmethod:
+
+
+      Instantiate an object from a dictionary.
+
+
+
+   .. py:method:: from_json(json_input)
+      :classmethod:
+
+
+      Instantiate an object from a JSON string or a dictionary.
+
+
+

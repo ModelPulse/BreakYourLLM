@@ -1,0 +1,19 @@
+sources.helpers.openai_client
+=============================
+
+.. py:module:: sources.helpers.openai_client
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   sources.helpers.openai_client.openai_client
+
+
+Module Contents
+---------------
+
+.. py:data:: openai_client
+

@@ -1,0 +1,19 @@
+sources.views.base_view
+=======================
+
+.. py:module:: sources.views.base_view
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   sources.views.base_view.BaseView
+
+
+Module Contents
+---------------
+
+.. py:class:: BaseView
+
