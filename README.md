@@ -14,6 +14,7 @@
 
 This is a comprehensive framework designed for testing and evaluating language models, particularly in the field of Natural Language Processing (NLP). This toolset provides functionalities for running tests, calculating performance metrics, and visualizing results to assess the quality of language models.
 
+![Dashboard Image](docs/images/dashboard.png)
 ![Overview Image](docs/images/overview.png)
 
 ## Table of Contents
@@ -35,7 +36,7 @@ This is a comprehensive framework designed for testing and evaluating language m
 
 ![Features Image](docs/images/features.png)
 
-![Dashboard Image](docs/images/dashboard_metrics.png)
+
 
 ## Technologies
 
