@@ -2,9 +2,9 @@
 
 
 
-[![Waitlist](https://img.shields.io/badge/Waitlist-Click_here-blue)](https://example.com/form)
-[![Website](https://img.shields.io/badge/Website-Click_here-green)](https://example.com/website)
-[![Documentation](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://<your-docs-url>)
+[![Waitlist](https://img.shields.io/badge/Waitlist-Click_here-blue)](https://www.breakyourllm.com/waitlist)
+[![Website](https://img.shields.io/badge/Website-Click_here-green)](https://www.breakyourllm.com/)
+[![Documentation](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://modelpulse.github.io/BreakYourLLM)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/release/python-380/)
 ## Test & Simulate your Production LLMs
 
