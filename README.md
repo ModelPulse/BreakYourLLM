@@ -74,6 +74,13 @@ To execute tests and evaluate models, run the following command:
 python sources/execute_tests.py
 ```
 
+
+To visualize the results, run the dashboard using the following command:
+```bash
+python sources/dashboard/app.py
+```
+Note: Run the command from the root repository folder.
+
 Refer to the documentation in the sources/ directory for more detailed usage instructions.
 
 
@@ -94,6 +101,10 @@ BreakYourLLM/
 │   ├── metrics/            # Metrics calculation modules
 │   ├── models/             # Model-related modules
 │   └── views/              # Result visualization modules
+│   └── dashboard/          # Dashboard for visualizing results
+│       ├── app.py          # Main application file
+│       ├── components/     # Components for the dashboard
+│       └── callbacks/      # Callbacks for the dashboard
 │
 └── requirements.txt       # Project dependencies
 ```
@@ -107,3 +118,5 @@ We welcome contributions! Please follow these steps:
 3. Make your changes and commit them (git commit -m 'Add some feature').
 4. Push to the branch (git push origin feature/YourFeature).
 5. Open a pull request.
+
+
