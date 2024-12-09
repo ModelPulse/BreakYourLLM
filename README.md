@@ -6,7 +6,7 @@
 [![Website](https://img.shields.io/badge/Website-Click_here-green)](https://www.breakyourllm.com/)
 [![Documentation](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://modelpulse.github.io/BreakYourLLM)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/release/python-380/)
-## Test & Simulate your Production LLMs
+## Test your production LLMs and simulate users
 
 **Break Your LLM before your users do! With our framework, you can build a comprehensive suite of tests that rigorously test your LLM against your guidelines.**
 
