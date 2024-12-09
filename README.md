@@ -35,6 +35,8 @@ This is a comprehensive framework designed for testing and evaluating language m
 
 ![Features Image](docs/images/features.png)
 
+![Dashboard Image](docs/images/dashboard.png)
+
 ## Technologies
 
 - **Languages**: Python
