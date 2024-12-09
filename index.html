@@ -42,6 +42,124 @@
 <!-- Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 documentation for details. -->
+<p><a class="reference external" href="https://example.com/form"><img alt="Waitlist" src="https://img.shields.io/badge/Waitlist-Click_here-blue" /></a>
+<a class="reference external" href="https://example.com/website"><img alt="Website" src="https://img.shields.io/badge/Website-Click_here-green" /></a>
+<a class="reference external" href="https://%3Cyour-docs-url%3E"><img alt="Documentation" src="https://img.shields.io/badge/docs-online-blue?style=flat-square" /></a>
+<a class="reference external" href="https://www.python.org/downloads/release/python-380/"><img alt="Python Version" src="https://img.shields.io/badge/python-3.8%2B-blue.svg" /></a></p>
+<section id="test-simulate-your-production-llms">
+<h2>Test &amp; Simulate your Production LLMs<a class="headerlink" href="#test-simulate-your-production-llms" title="Link to this heading">¶</a></h2>
+<p><strong>Break Your LLM before your users do! With our framework, you can build a comprehensive suite of tests that rigorously test your LLM against your guidelines.</strong></p>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>This is a comprehensive framework designed for testing and evaluating language models, particularly in the field of Natural Language Processing (NLP). This toolset provides functionalities for running tests, calculating performance metrics, and visualizing results to assess the quality of language models.</p>
+<p><img alt="Overview Image" src="_images/overview.png" /></p>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#features"><span class="xref myst">Features</span></a></p></li>
+<li><p><a class="reference internal" href="#technologies"><span class="xref myst">Technologies</span></a></p></li>
+<li><p><a class="reference internal" href="#installation"><span class="xref myst">Installation</span></a></p></li>
+<li><p><a class="reference internal" href="#usage"><span class="xref myst">Usage</span></a></p></li>
+<li><p><a class="reference internal" href="#codebase-organization"><span class="xref myst">Codebase Organization</span></a></p></li>
+<li><p><a class="reference internal" href="#contributing"><span class="xref myst">Contributing</span></a></p></li>
+<li><p><a class="reference internal" href="#license"><span class="xref myst">License</span></a></p></li>
+</ul>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Model Testing</strong>: Execute tests on various language models.</p></li>
+<li><p><strong>Metrics Calculation</strong>: Calculate metrics such as accuracy, hallucination rate, and more.</p></li>
+<li><p><strong>Result Visualization</strong>: Visualize test results for better analysis.</p></li>
+<li><p><strong>Configurable</strong>: Easily configure settings through YAML and environment files.</p></li>
+</ul>
+<p><img alt="Features Image" src="_images/features.png" /></p>
+</section>
+<section id="technologies">
+<h2>Technologies<a class="headerlink" href="#technologies" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Languages</strong>: Python</p></li>
+<li><p><strong>Frameworks/Libraries</strong>:</p>
+<ul>
+<li><p>OpenAI</p></li>
+<li><p>Pandas</p></li>
+<li><p>NumPy</p></li>
+<li><p>PyYAML</p></li>
+<li><p>Requests</p></li>
+</ul>
+</li>
+<li><p><strong>Tools</strong>:</p>
+<ul>
+<li><p>Pydantic</p></li>
+<li><p>Python-dotenv</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<p>To get started with this project, follow these steps:</p>
+<ol class="arabic">
+<li><p><strong>Clone the repository</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/yourusername/BreakYourLLM.git
+<span class="nb">cd</span><span class="w"> </span>BreakYourLLM
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install the required dependencies</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p><strong>Configure your environment</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Create<span class="w"> </span>a<span class="w"> </span>.env<span class="w"> </span>file<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>provided<span class="w"> </span>.env.example<span class="w"> </span>and<span class="w"> </span>fill<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>necessary<span class="w"> </span>variables.
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
+<p>To execute tests and evaluate models, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>sources/execute_tests.py
+</pre></div>
+</div>
+<p>Refer to the documentation in the sources/ directory for more detailed usage instructions.</p>
+</section>
+<section id="codebase-organization">
+<h2>Codebase Organization<a class="headerlink" href="#codebase-organization" title="Link to this heading">¶</a></h2>
+<p>The project is organized as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>BreakYourLLM/
+│
+├──<span class="w"> </span>config/<span class="w">                </span><span class="c1"># Configuration files</span>
+│<span class="w">   </span>├──<span class="w"> </span>.env<span class="w">               </span><span class="c1"># Environment variables</span>
+│<span class="w">   </span>└──<span class="w"> </span>config.yaml<span class="w">        </span><span class="c1"># Configuration settings</span>
+│
+├──<span class="w"> </span>sources/<span class="w">               </span><span class="c1"># Source code</span>
+│<span class="w">   </span>├──<span class="w"> </span>execute_tests.py<span class="w">    </span><span class="c1"># Script for executing tests</span>
+│<span class="w">   </span>├──<span class="w"> </span>full_pipeline.py<span class="w">     </span><span class="c1"># Full testing pipeline script</span>
+│<span class="w">   </span>├──<span class="w"> </span>helpers/<span class="w">            </span><span class="c1"># Helper scripts</span>
+│<span class="w">   </span>├──<span class="w"> </span>metrics/<span class="w">            </span><span class="c1"># Metrics calculation modules</span>
+│<span class="w">   </span>├──<span class="w"> </span>models/<span class="w">             </span><span class="c1"># Model-related modules</span>
+│<span class="w">   </span>└──<span class="w"> </span>views/<span class="w">              </span><span class="c1"># Result visualization modules</span>
+│
+└──<span class="w"> </span>requirements.txt<span class="w">       </span><span class="c1"># Project dependencies</span>
+</pre></div>
+</div>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">¶</a></h2>
+<p>We welcome contributions! Please follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Fork the repository.</p></li>
+<li><p>Create a new branch (git checkout -b feature/YourFeature).</p></li>
+<li><p>Make your changes and commit them (git commit -m ‘Add some feature’).</p></li>
+<li><p>Push to the branch (git push origin feature/YourFeature).</p></li>
+<li><p>Open a pull request.</p></li>
+</ol>
+<hr class="docutils" />
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">API Documentation:</span></p>
 <ul>
@@ -56,6 +174,7 @@ documentation for details. -->
 </li>
 </ul>
 </div>
+</section>
 </section>
 
 
