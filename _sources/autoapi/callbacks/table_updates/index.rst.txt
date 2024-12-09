@@ -1,0 +1,37 @@
+callbacks.table_updates
+=======================
+
+.. py:module:: callbacks.table_updates
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   callbacks.table_updates.register_table_callbacks
+   callbacks.table_updates.create_test_case_row
+   callbacks.table_updates.create_results_table
+   callbacks.table_updates.create_styled_table
+
+
+Module Contents
+---------------
+
+.. py:function:: register_table_callbacks(app)
+
+.. py:function:: create_test_case_row(test_case, execution_results, test_idx)
+
+   Create a row for a test case with results for all answers.
+
+
+.. py:function:: create_results_table(execution_results)
+
+   Create the results table with execution results.
+
+
+.. py:function:: create_styled_table(columns, data_rows)
+
+   Create a styled DataTable component.
+
+

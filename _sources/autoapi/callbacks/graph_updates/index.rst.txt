@@ -1,0 +1,31 @@
+callbacks.graph_updates
+=======================
+
+.. py:module:: callbacks.graph_updates
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   callbacks.graph_updates.register_graph_callbacks
+   callbacks.graph_updates.process_file_accuracies
+   callbacks.graph_updates.process_question_accuracies
+   callbacks.graph_updates.create_file_accuracy_figure
+   callbacks.graph_updates.create_question_accuracy_figure
+
+
+Module Contents
+---------------
+
+.. py:function:: register_graph_callbacks(app)
+
+.. py:function:: process_file_accuracies(selected_files)
+
+.. py:function:: process_question_accuracies(selected_files)
+
+.. py:function:: create_file_accuracy_figure(file_accuracies)
+
+.. py:function:: create_question_accuracy_figure(question_accuracies)
+

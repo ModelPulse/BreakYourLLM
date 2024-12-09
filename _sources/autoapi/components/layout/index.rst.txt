@@ -1,0 +1,22 @@
+components.layout
+=================
+
+.. py:module:: components.layout
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   components.layout.create_layout
+
+
+Module Contents
+---------------
+
+.. py:function:: create_layout(metadata_list)
+
+   Create the main application layout.
+
+

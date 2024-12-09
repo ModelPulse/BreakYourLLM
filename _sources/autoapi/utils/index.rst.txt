@@ -1,0 +1,43 @@
+utils
+=====
+
+.. py:module:: utils
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/utils/constants/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   utils.TABLE_CELL_STYLE
+   utils.TABLE_DATA_CONDITIONAL_STYLE
+   utils.TABLE_CELL_CONDITIONAL_STYLE
+   utils.TABLE_HEADER_STYLE
+   utils.TABLE_HEADER_CONDITIONAL_STYLE
+   utils.TABLE_STYLE
+
+
+Package Contents
+----------------
+
+.. py:data:: TABLE_CELL_STYLE
+
+.. py:data:: TABLE_DATA_CONDITIONAL_STYLE
+
+.. py:data:: TABLE_CELL_CONDITIONAL_STYLE
+
+.. py:data:: TABLE_HEADER_STYLE
+
+.. py:data:: TABLE_HEADER_CONDITIONAL_STYLE
+
+.. py:data:: TABLE_STYLE
+

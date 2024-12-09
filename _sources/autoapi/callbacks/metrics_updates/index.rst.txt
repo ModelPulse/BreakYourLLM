@@ -1,0 +1,37 @@
+callbacks.metrics_updates
+=========================
+
+.. py:module:: callbacks.metrics_updates
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   callbacks.metrics_updates.register_metrics_callbacks
+   callbacks.metrics_updates.get_default_metric_values
+   callbacks.metrics_updates.process_metrics
+   callbacks.metrics_updates.create_accuracy_gauge
+
+
+Module Contents
+---------------
+
+.. py:function:: register_metrics_callbacks(app)
+
+.. py:function:: get_default_metric_values()
+
+   Return default values for all metrics.
+
+
+.. py:function:: process_metrics(metrics)
+
+   Process metrics data and return formatted components.
+
+
+.. py:function:: create_accuracy_gauge(accuracy_value)
+
+   Create an accuracy gauge figure.
+
+

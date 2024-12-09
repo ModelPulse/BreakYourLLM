@@ -1,0 +1,51 @@
+components
+==========
+
+.. py:module:: components
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/components/layout/index
+   /autoapi/components/metrics/index
+   /autoapi/components/tables/index
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   components.create_metrics_section
+   components.create_metadata_table
+   components.create_question_answer_container
+   components.create_layout
+
+
+Package Contents
+----------------
+
+.. py:function:: create_metrics_section()
+
+   Create the metrics cards section.
+
+
+.. py:function:: create_metadata_table(metadata_list)
+
+   Create the metadata table component.
+
+
+.. py:function:: create_question_answer_container()
+
+   Create the question and answer container.
+
+
+.. py:function:: create_layout(metadata_list)
+
+   Create the main application layout.
+
+

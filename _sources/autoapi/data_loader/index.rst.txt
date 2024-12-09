@@ -1,0 +1,28 @@
+data_loader
+===========
+
+.. py:module:: data_loader
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   data_loader.load_metadata
+   data_loader.process_metadata
+
+
+Module Contents
+---------------
+
+.. py:function:: load_metadata(result_folder='./results')
+
+   Load metadata from JSON files in the results folder.
+
+
+.. py:function:: process_metadata(metadata, file_path)
+
+   Process individual metadata entries.
+
+

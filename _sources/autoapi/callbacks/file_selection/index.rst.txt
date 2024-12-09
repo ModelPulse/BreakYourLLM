@@ -1,0 +1,19 @@
+callbacks.file_selection
+========================
+
+.. py:module:: callbacks.file_selection
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   callbacks.file_selection.register_file_selection_callbacks
+
+
+Module Contents
+---------------
+
+.. py:function:: register_file_selection_callbacks(app, metadata_list)
+

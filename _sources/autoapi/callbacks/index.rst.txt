@@ -1,0 +1,46 @@
+callbacks
+=========
+
+.. py:module:: callbacks
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/callbacks/file_selection/index
+   /autoapi/callbacks/graph_updates/index
+   /autoapi/callbacks/metrics_updates/index
+   /autoapi/callbacks/table_updates/index
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   callbacks.register_file_selection_callbacks
+   callbacks.register_graph_callbacks
+   callbacks.register_metrics_callbacks
+   callbacks.register_table_callbacks
+   callbacks.register_callbacks
+
+
+Package Contents
+----------------
+
+.. py:function:: register_file_selection_callbacks(app, metadata_list)
+
+.. py:function:: register_graph_callbacks(app)
+
+.. py:function:: register_metrics_callbacks(app)
+
+.. py:function:: register_table_callbacks(app)
+
+.. py:function:: register_callbacks(app, metadata_list)
+
+   Register all callbacks with the app.
+
+

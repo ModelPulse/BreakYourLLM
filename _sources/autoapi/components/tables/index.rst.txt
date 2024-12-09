@@ -1,0 +1,28 @@
+components.tables
+=================
+
+.. py:module:: components.tables
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   components.tables.create_metadata_table
+   components.tables.create_question_answer_container
+
+
+Module Contents
+---------------
+
+.. py:function:: create_metadata_table(metadata_list)
+
+   Create the metadata table component.
+
+
+.. py:function:: create_question_answer_container()
+
+   Create the question and answer container.
+
+

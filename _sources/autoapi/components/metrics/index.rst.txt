@@ -1,0 +1,22 @@
+components.metrics
+==================
+
+.. py:module:: components.metrics
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   components.metrics.create_metrics_section
+
+
+Module Contents
+---------------
+
+.. py:function:: create_metrics_section()
+
+   Create the metrics cards section.
+
+

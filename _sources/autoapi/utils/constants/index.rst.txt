@@ -1,0 +1,34 @@
+utils.constants
+===============
+
+.. py:module:: utils.constants
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   utils.constants.TABLE_CELL_STYLE
+   utils.constants.TABLE_DATA_CONDITIONAL_STYLE
+   utils.constants.TABLE_CELL_CONDITIONAL_STYLE
+   utils.constants.TABLE_HEADER_STYLE
+   utils.constants.TABLE_HEADER_CONDITIONAL_STYLE
+   utils.constants.TABLE_STYLE
+
+
+Module Contents
+---------------
+
+.. py:data:: TABLE_CELL_STYLE
+
+.. py:data:: TABLE_DATA_CONDITIONAL_STYLE
+
+.. py:data:: TABLE_CELL_CONDITIONAL_STYLE
+
+.. py:data:: TABLE_HEADER_STYLE
+
+.. py:data:: TABLE_HEADER_CONDITIONAL_STYLE
+
+.. py:data:: TABLE_STYLE
+

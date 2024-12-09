@@ -1,0 +1,22 @@
+app
+===
+
+.. py:module:: app
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   app.app
+   app.metadata_list
+
+
+Module Contents
+---------------
+
+.. py:data:: app
+
+.. py:data:: metadata_list
+

@@ -6,9 +6,14 @@ This page contains auto-generated API reference documentation [#f1]_.
 .. toctree::
    :titlesonly:
 
+   /autoapi/app/index
+   /autoapi/utils/index
    /autoapi/sources/index
    /autoapi/metadata/index
+   /autoapi/callbacks/index
    /autoapi/unit_tests/index
+   /autoapi/components/index
+   /autoapi/data_loader/index
    /autoapi/execute_tests/index
    /autoapi/common_interface/index
    /autoapi/unit_tests_result/index
