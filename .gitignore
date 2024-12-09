@@ -5,6 +5,7 @@ __pycache__
 !config/.env
 .DS_Store
 *.json
+docs/source/autoapi
 
 # Sphinx build directories
 _build/
